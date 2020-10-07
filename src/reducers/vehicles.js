@@ -16,7 +16,6 @@ function vehicles(
       loading: true
     }
     case 'FETCH_VEHICLES_SUCCESS':
-      console.log('payload: ', action.payload);
     return {
       items: action.payload.data.Items,
       loading: false

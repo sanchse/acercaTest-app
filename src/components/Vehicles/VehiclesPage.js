@@ -19,17 +19,17 @@ import type { Connector } from 'react-redux'
 
 type Props = {
     vehicles: VehiclesState,
+    numItems: 10,
     match: {
         url: string
     },
     fetchVehiclesIfNeeded(): void,
-    deleteVehicle(id: number): void,
-    fetchVehicles(): void
+    deleteVehicle(id: string): void,
+    fetchVehicles(numItems: number): void
 }
 
 class VehiclesPage extends Component<Props> {
     componentDidMount() {
-        console.log('se llama a: fechaVehiclesIfNeeded');
         this.props.fetchVehiclesIfNeeded()
     }
 
@@ -50,7 +50,8 @@ class VehiclesPage extends Component<Props> {
     }
 
     handleReloadVehicles = () => {
-        this.props.fetchVehicles()
+        const { numItems } = this.props
+        this.props.fetchVehicles(numItems)
     }
 
     render() {

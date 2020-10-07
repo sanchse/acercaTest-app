@@ -28,13 +28,14 @@ export default function VehiclesHeading({
         >
           New Vehicle
         </button>
-        <button
-          className="btn vehicles-heading__btn"
-          onClick={onReloadVehicles}
-          disabled={loading || vehicles.length === 0}
-        >
-          Reload Vehicles
-        </button>
+
+        Num. Items: 
+        <select>
+          <option value="0">Todos</option>
+          <option value="10">10</option>
+          <option value="50">50</option>
+        </select>
+        
       </div>
     </div>
   )
