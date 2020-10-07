@@ -6,8 +6,8 @@ import {
   const token = JSON.parse(localStorage.getItem("token"));
   
   const initialState = token
-    ? { isLoggedIn: true, user: token }
-    : { isLoggedIn: false, user: null };
+    ? { isLoggedIn: true, token: token }
+    : { isLoggedIn: false, token: null };
 
     export default function (state = initialState, action) {
         const { type, payload } = action;

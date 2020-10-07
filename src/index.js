@@ -9,18 +9,21 @@ import App from './components/App';
 import HomePage from './components/Home/HomePage';
 import VehiclesPage from './components/Vehicles/VehiclesPage';
 import VehiclePage from './components/Vehicles/VehiclePage';
+import history from './services/history'
 
 const store = configureStore()
 
 ReactDOM.render(
-  <Provider store={store}>
+  <Provider store={store} history={history}>
     <Router>
-      <Switch>
-        <Route exact path="/" component={App}></Route>
-        <Route path="/vehicles" component={VehiclesPage}></Route>
-        <Route path="/vehicles/new" component={VehiclePage} />
-        <Route path="/vehicles/:id" component={VehiclePage} />
-      </Switch>
+      <div>
+        <Switch>
+          <Route exact path="/" component={App}></Route>
+          <Route path="/vehicles" component={VehiclesPage}></Route>
+          <Route path="/vehicles/new" component={VehiclePage} />
+          <Route path="/vehicles/:id" component={VehiclePage} />
+        </Switch>
+      </div>
     </Router>
   </Provider>,
   document.getElementById('root')

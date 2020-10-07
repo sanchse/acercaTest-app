@@ -8,7 +8,7 @@ import {
 
 
 export const loadVehicles = (numItems) => (dispatch) => {
-    return VehiclesService.loadVehicles(numItems)
+    return VehiclesService.getVehicles(numItems)
         .then((response) => {
             dispatch({
                 type: GET_VEHICLES_SUCCESS,

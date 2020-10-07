@@ -13,11 +13,7 @@ class App extends React.Component {
     }
 
     componentDidMount() {
-        console.log("didMount");
         AuthService.getToken(user, password);
-
-        // const { getToken } = this.props;
-        // this.props.getToken(user, password);
     }
 
     render() {
